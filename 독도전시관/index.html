@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://ssl.gstatic.com https://t1.daumcdn.net http://dmaps.daum.net 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://dangkko.github.io https://fonts.googleapis.com ; media-src *; img-src 'self' data: content:; font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://dangkko.github.io; frame-src 'self' https://www.google.com/ https://postcode.map.daum.net;"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>독도체험관</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/js/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="/js/jquery-ui.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/layout.css?ver=20240507"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/board.css" />
+    <link rel="stylesheet" type="text/css" href="/css/module.css" />
+    <link rel="stylesheet" type="text/css" href="/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/aos.css" />
+
+    <!-- 메인일때 -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css?ver=1.2" />
+
+    <script type="text/javascript" src="/js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
+    <script type="text/javascript" src="/js/module.js?ver=1.0"></script>
+    <script type="text/javascript" src="/js/custom.js?ver=1.1"></script>
+    <script type="text/javascript" src="/js/fullpage.js"></script>
+    <script type="text/javascript" src="/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="/js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="/js/aos.js"></script>
+
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="canonical" href="http://sjdokdo.kr/" />
+    <link rel="alternate" href="http://sjdokdo.kr/" />
+    <meta property="og:image" content="/images/common/ogimage.jpg" />
+    <meta property="og:url" content="http://sjdokdo.kr/" />
+    <meta property="og:title" content="독도체험관" />
+    <meta name="description" content="독도체험관" />
+    <meta property="og:description" content="독도체험관" />
+    <meta property="og:site_name" content="http://sjdokdo.kr/" />
+    <meta property="naver-site-verification" content="" />
+    <meta name="google-site-verification" content="" />
+    <meta property="og:type" content="website" />
+
+    <style>
+      #graph {
+        position: relative;
+        width: 650px;
+        height: 400px;
+        margin: auto;
+        background: #ddd;
+      }
+      #graph li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        list-style: none;
+        height: 80px;
+        line-height: 80px;
+        width: 80px;
+        text-align: center;
+        background: #384458;
+        color: #fff;
+        border-radius: 100%;
+      }
+      #graph li:hover {
+        background: #6891d6;
+      }
+      #graph li:nth-child(1) {
+        left: 10px;
+        top: 10px;
+      }
+      #graph li:nth-child(2) {
+        left: 150px;
+        top: 110px;
+      }
+      #graph li:nth-child(3) {
+        left: 430px;
+        top: 200px;
+      }
+      #graph li:nth-child(4) {
+        left: 520px;
+        top: 60px;
+      }
+      #graph li:nth-child(5) {
+        left: 90px;
+        top: 310px;
+      }
+      #graph li:nth-child(6) {
+        left: 270px;
+        top: 260px;
+      }
+    </style>
+
+    <!--[if lte IE 10]>
+      <script type="text/javascript">
+        document.write(
+          '<div id="update">보고계신 사이트는 <b>익스플로러11에 최적화 된</b> 사이트 입니다. Windows Internet Explorer를 <b>업데이트</b>를 받으세요 <a href="http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie" target="_blank" title="새창">Internet Explorer 업데이트하기</a></div>'
+        );
+      </script>
+    <![endif]-->
+
+    <!-- Naver Analytics -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if (!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "7cfc99f3a5dc04";
+      if (window.wcs) {
+        wcs_do();
+      }
+    </script>
+  </head>
+
+  <body class="main">
+    <script type="text/javascript">
+      //<![CDATA[
+      // 쿠키 체크
+      function getCookie(name) {
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length) {
+          var y = x + nameOfCookie.length;
+          if (document.cookie.substring(x, y) == nameOfCookie) {
+            if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+              endOfCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y, endOfCookie));
+          }
+          x = document.cookie.indexOf(" ", x) + 1;
+          if (x == 0) break;
+        }
+        return "";
+      }
+
+      //]]>
+    </script>
+
+    <ul id="skip_navi">
+      <li><a href="#mainConts">본문 바로가기</a></li>
+      <li><a href="#gnb">메인메뉴 바로가기</a></li>
+    </ul>
+
+    <div id="wrap">
+      <!-- S. header -->
+      <header id="header" class="slidedown">
+        <div class="inner wrap">
+          <h1>
+            <a href="/" title=""
+              ><img
+                src="/images/common/logo_simbol.svg"
+                alt="세종특별자치시교육청" /><img
+                src="/images/common/logo_tx.svg"
+                alt="독도전시관"
+            /></a>
+          </h1>
+
+          <!-- gnb -->
+          <a href="javascript:;" class="btn_menu" data-util="menu">Menu open</a>
+          <nav id="gnb">
+            <ul class="gnb">
+              <li>
+                <a href="/contents/01_about/sub01.html" class="about"
+                  >체험관 소개</a
+                >
+                <ul>
+                  <li>
+                    <a href="/contents/01_about/sub01.html" class="about_sub01"
+                      >인사말</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/contents/01_about/sub02.html" class="about_sub02"
+                      >체험관 연혁</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/contents/01_about/sub03.html" class="about_sub03"
+                      >오시는길</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/contents/02_preview/sub01.html" class="preview"
+                  >관람 정보</a
+                >
+                <ul>
+                  <li>
+                    <a
+                      href="/contents/02_preview/sub01.html"
+                      class="preview_sub01"
+                      >관람안내</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/contents/02_preview/sub02.html"
+                      class="preview_sub02"
+                      >단체예약</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/contents/02_preview/reservation.html?mode=user_list"
+                      class="preview_reser"
+                      >예약확인·취소</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/contents/03_guide/sub01.html" class="guide"
+                  >전시 안내</a
+                >
+              </li>
+              <li>
+                <a href="/contents/04_data/sub01.html" class="data"
+                  >독도 자료실</a
+                >
+                <ul>
+                  <li>
+                    <a href="/contents/04_data/sub01.html" class="data_sub01"
+                      >독도현황</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/contents/04_data/board.html?board_id=board_picture&cate=봄"
+                      class="board_picture"
+                      >독도사진</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/contents/04_data/data_lib.html?board_id=board_data_lib"
+                      class="board_data_lib"
+                      >교육자료실</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="/contents/05_community/notice.html?board_id=board_notice"
+                  class="community"
+                  >열린광장</a
+                >
+                <ul>
+                  <li>
+                    <a
+                      href="/contents/05_community/notice.html?board_id=board_notice"
+                      class="board_notice"
+                      >공지사항</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/contents/05_community/gallery.html?board_id=board_Dgallery"
+                      class="board_Dgallery"
+                      >포토앨범</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- //gnb -->
+
+          <div class="util_member">
+            <a href="/member/member.html?chk_mem=account">로그인</a>
+            <a href="/member/member.html?mode=agree">회원가입</a>
+          </div>
+        </div>
+      </header>
+      <!-- //E. header -->
+      <!-- S. visual -->
+      <section class="area_visual" id="mainConts">
+        <div class="swiper-container">
+          <button
+            class="swiper-button-prev"
+            aria-label="키보드 방향키 왼쪽을 누르면 이전 슬라이드로 이동합니다."
+          >
+            메인비쥬얼 슬라이드 이전보기
+          </button>
+          <button
+            class="swiper-button-next"
+            aria-label="키보드 방향키 오른쪽을 누르면 다음 슬라이드로 이동합니다."
+          >
+            메인비쥬얼 슬라이드 다음보기
+          </button>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="slide-inner slide-bg-image"
+                style="background-image: url(../images/main/img_visual01.jpg)"
+              >
+                <div class="container">
+                  <div class="slogan">
+                    <p data-swiper-parallax="300" class="slide-title">
+                      <img
+                        src="/images/main/visual_tx.svg"
+                        alt="대한민국 독도 세종에서 만나다"
+                      />
+                    </p>
+                    <i data-swiper-parallax="400" class="slide-text"
+                      >독도에 대한 의미를 되새기는 특별한 공간,<br />
+                      독도의 삶과 역사를 잊지 않기 위해 독도체험관이
+                      앞장서겠습니다.
+                    </i>
+                  </div>
+                  <a
+                    href="contents/03_guide/sub01.html"
+                    data-swiper-parallax="500"
+                    class="btn"
+                    >전시안내 보기</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- //E. swiper-slide -->
+
+            <div class="swiper-slide">
+              <div
+                class="slide-inner slide-bg-image"
+                style="background-image: url(../images/main/img_visual02.jpg)"
+              >
+                <div class="container">
+                  <div class="slogan">
+                    <p data-swiper-parallax="300" class="slide-title">
+                      <img
+                        src="/images/main/visual_tx.svg"
+                        alt="대한민국 독도 세종에서 만나다"
+                      />
+                    </p>
+                    <i data-swiper-parallax="400" class="slide-text"
+                      >세종특별자치시교육청 독도체험관은 독도에 대한<br />
+                      올바른 이해와 영토 주권의식을 확산시키고자 마련된
+                      공간입니다.</i
+                    >
+                  </div>
+                  <a
+                    href="contents/03_guide/sub01.html"
+                    data-swiper-parallax="500"
+                    class="btn"
+                    >전시안내 보기</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- //E. swiper-slide -->
+          </div>
+          <!-- swipper controls -->
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="scroll">
+          <span><i>Scroll</i></span>
+        </div>
+        <a href="contents/02_preview/sub02.html#content" class="btn_cicle"
+          ><i></i>단체예약<br />신청</a
+        >
+      </section>
+      <!-- //E. visual -->
+
+      <section id="container">
+        <!-- 본문 -->
+        <div id="content">
+          <article class="area_info">
+            <div class="wrap">
+              <div class="dokdo_sect" data-aos="fade-up">
+                <h3>독도 바로알기</h3>
+                <p>
+                  독도의 역사를 배우고, 자연을 체험하며 독도영토주권 <br />
+                  수호 의지를 다질 수 있는 소중한 시간이 되기를 바랍니다.
+                </p>
+                <a href="/contents/04_data/sub01.html" class="btn color"
+                  >바로가기
+                  <svg
+                    version="1.1"
+                    id=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 11.67 11.67"
+                    style="enable-background: new 0 0 11.67 11.67"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <rect y="9.18" class="st0" width="2.49" height="2.49" />
+                      <polygon
+                        class="st0"
+                        points="9.7,0 3.31,0 3.31,1.97 8.2,1.97 3,7.16 4.39,8.55 9.7,3.24 9.7,8.35 11.67,8.35 11.67,1.97 11.67,0"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+
+              <div
+                class="viewinfo_sect"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3>관람안내</h3>
+                <div>
+                  <i></i>
+                  <strong>044-999-6393</strong>
+                  <a href="contents/02_preview/sub01.html">관람 문의하기</a>
+                </div>
+                <ul class="list_bullet">
+                  <li>
+                    <strong>관람시간</strong>
+                    <p>
+                      화요일-토요일 9:00 ~ 17:00 <br />(점심시간 12:00~13:00,
+                      입장마감 16:30)
+                      <span
+                        >※ 관람시간은 학교 사정에 따라 변경될 수 있습니다.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <strong>휴관안내</strong>
+                    <p>일요일, 월요일 및 공휴일</p>
+                  </li>
+                  <li>
+                    <strong>위치</strong>
+                    <p>세종특별자치시 새롬서로 68 새롬고등학교 1층</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <!-- //E. 01_area_info -->
+
+          <article class="area_notice" data-aos="fade-up">
+            <div class="notice_inn">
+              <div class="left_sect">
+                <h3>공지사항</h3>
+                <p>
+                  독도의 미래를 생각하는 공간으로 <br />
+                  앞으로도 지속적으로 활용되기를 바랍니다.
+                </p>
+                <div class="swiper-control">
+                  <button type="button" class="swiper-button-prev">
+                    <span>공자사항 슬라이드 이전보기</span>
+                  </button>
+                  <button type="button" class="swiper-button-next">
+                    <span>공자사항 슬라이드 다음보기</span>
+                  </button>
+                  <button type="button" class="swiper_auto">
+                    <span>자동재생정지</span>
+                  </button>
+                </div>
+              </div>
+              <div class="swiper mySwiper right_sect">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a
+                      href="/contents/05_community/notice.html?board_id=board_notice&mode=view&no=30"
+                    >
+                      <span class="img">
+                        <img
+                          src="/upload/board_notice/섬기린초 나눔행사 카드뉴스.pdf_page_1.jpg"
+                          alt=""
+                      /></span>
+                      <i class="tag_news">news</i>
+                      <strong> 2024년 독도식물 섬기린초 나눔 행사 안내 </strong>
+                      <p>
+                        2024년 독도식물 섬기린초 나눔 행사 안내 기간 : 2024. 5.
+                        16.~5. 31. 대.....
+                      </p>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a
+                      href="/contents/05_community/notice.html?board_id=board_notice&mode=view&no=27"
+                    >
+                      <span class="img">
+                        <img
+                          src="/upload/board_notice/98475_상반기 독도체험교실 웹포스터.jpg"
+                          alt=""
+                      /></span>
+                      <i class="tag_news">news</i>
+                      <strong> 2024학년도 상반기 독도체험교실 안내 </strong>
+                      <p>
+                        2024학년도 상반기 독도체험교실 행사안내 1. 기간 :
+                        2024.3.26.(화) ~ 2.....
+                      </p>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a
+                      href="/contents/05_community/notice.html?board_id=board_notice&mode=view&no=26"
+                    >
+                      <span class="img">
+                        <img
+                          src="/upload/board_notice/독도체험관 겨울방학 체험교실.jpg"
+                          alt=""
+                      /></span>
+                      <i class="tag_news">news</i>
+                      <strong> 독도체험관 겨울방학 체험교실 </strong>
+                      <p>
+                        독도체험관 겨울방학 체험교실 안내&nbsp; 독도체험관 관람
+                        후 독도퍼즐을 완성하신 분들께는&.....
+                      </p>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a
+                      href="/contents/05_community/notice.html?board_id=board_notice&mode=view&no=25"
+                    >
+                      <span class="img">
+                        <img
+                          src="/upload/board_notice/카드뉴스 시안(1).jpg"
+                          alt=""
+                      /></span>
+                      <i class="tag_news">news</i>
+                      <strong> 독도체험관 시범 운영 안내 </strong>
+                      <p>
+                        내부 공사 후 시범 운영 안내 시범 운영 기간 : 2024. 1.
+                        30. ~ 2. 7.&nbs.....
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </article>
+          <!-- //E. 02_area_notice -->
+
+          <article class="area_banner" data-aos="fade-up">
+            <div class="banner wrap">
+              <a href="contents/03_guide/sub01.html#3Page">
+                <h3>체험존 안내</h3>
+                <p>
+                  독도체험관은 대한민국 동쪽 끝, <br />
+                  우리의 섬 독도를 만나는 체험 공간입니다.
+                </p>
+                <img src="images/main/icon_experience.svg" alt="" />
+              </a>
+              <a href="contents/03_guide/sub01.html#4Page">
+                <h3>영상관 안내</h3>
+                <p>
+                  가상현실(VR)과 같은 최신 기법을 활용하여 <br />
+                  실감형 콘텐츠 등을 적용한 독도 영상관입니다.
+                </p>
+                <img src="images/main/icon_theater.svg" alt="" />
+              </a>
+            </div>
+          </article>
+          <!-- //E. 03_area_banner -->
+        </div>
+        <!-- //본문 -->
+      </section>
+
+      <!-- footer -->
+      <footer id="footer">
+        <div id="dokdo_bg" class="dokdo_area">
+          <div id="dokdo_inn" class="wrap">
+            <img
+              src="/images/common/img_logo2.svg"
+              alt="한국의 아름다운 섬, 독도"
+            />
+            <p>“ 경상북도 울릉읍 독도리 1-96 ”</p>
+            <div class="circle1"></div>
+            <div class="circle1_1"></div>
+            <div class="circle2"></div>
+            <div class="circle2_1"></div>
+            <i class="tx1">서도</i>
+            <i class="tx2">동도</i>
+          </div>
+        </div>
+        <div class="footer_inn">
+          <div class="wrap">
+            <address>
+              <ul class="infoCopy">
+                <li><a href="/contents/06_privacy/sub01.html">이용약관</a></li>
+                <li>
+                  <a href="/contents/06_privacy/sub02.html">개인정보취급방침</a>
+                </li>
+                <li>
+                  <a href="/contents/06_privacy/sub04.html"
+                    >이메일주소무단수집거부</a
+                  >
+                </li>
+              </ul>
+              <ul class="ftInfo">
+                <li>
+                  주소. (30126) 세종특별자치시 새롬서로 68 새롬고등학교 1층
+                  독도체험관
+                </li>
+                <li>문의전화. 044-999-6393</li>
+              </ul>
+              <p class="copyright">
+                © 2022 Dokdo Exhibitonon All rights reserved .
+              </p>
+            </address>
+            <a
+              href="/contents/02_preview/reservation.html"
+              class="btn_cicle green"
+              ><i></i>단체예약<br />신청</a
+            >
+            <img
+              src="/images/common/wa_mark2024.svg"
+              class="btn_wa"
+              alt="웹접근성인증마크"
+            />
+            <a href="/contents/01_about/sub03.html" class="btn_cicle org"
+              >독도체험관 <br />오시는길</a
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- //footer -->
+    </div>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
+<!-- <script type="text/javascript" src="/js/spidocheScaler.js"></script>
+<script>$('#graph').spidochescaler({maxWidth:650});</script> -->
